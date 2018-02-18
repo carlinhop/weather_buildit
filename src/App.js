@@ -13,6 +13,10 @@ import { connect } from "react-redux";
 class App extends Component {
   componentWillMount() {
     store.dispatch(getForecastData());
+    store.subscribe(() => {
+      let state = store.getState();
+      this.setState({ forecast: state.forecast });
+    });
   }
   render() {
     return (
@@ -38,8 +42,4 @@ class App extends Component {
   }
 }
 
-function mapStateToProps() {
-  return {};
-}
-
-export default connect(mapStateToProps)(App);
+export default App;

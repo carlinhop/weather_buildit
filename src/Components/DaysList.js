@@ -1,6 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import DayCard from "./DayCard";
+import { connect } from "react-redux";
 
 class DaysList extends Component {
   constructor(props) {
@@ -8,15 +9,29 @@ class DaysList extends Component {
   }
 
   render() {
+    let daysList;
+    try {
+      daysList = this.props.forecast.list.map(forecast => {
+        console.log(forecast);
+        return <DayCard threeHourlyForecast={forecast} />;
+      });
+    } catch (error) {
+      console.log(error);
+    }
+
     return (
       <div className="DaysList">
-        <DayCard />
-        <DayCard />
-        <DayCard />
-        <DayCard />
+        {daysList ? daysList : <div>Nothing yet</div>}
       </div>
     );
   }
 }
 
-export default DaysList;
+function mapStateToProps(state) {
+  console.log(state);
+  return {
+    forecast: state ? state.forecast : { list: [] }
+  };
+}
+
+export default connect(mapStateToProps)(DaysList);

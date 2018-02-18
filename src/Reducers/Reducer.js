@@ -1,7 +1,7 @@
 function reducer(state = {}, action) {
   switch (action.type) {
     case "GETFORECAST":
-      console.log(action.payload);
+      return Object.assign({}, state, { forecast: action.payload });
     default:
       return state;
   }
