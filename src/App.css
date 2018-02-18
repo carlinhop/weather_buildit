@@ -13,7 +13,6 @@
   margin-left: 33%;
 }
 
-.weather-icons {
-  max-width: "50px";
-  min-width: "50px";
+.day-card-container {
+  margin-bottom: 20px;
 }

@@ -17,9 +17,22 @@ class DayCard extends Component {
       "max-width": "50px",
       "min-width": "50px"
     };
+
     return (
-      <div>
+      <div className="day-card-container">
         <Card className="day-card">
+          <CardMedia style={style}>
+            <img
+              className="weather-icons"
+              src={
+                "http://openweathermap.org/img/w/" +
+                this.props.threeHourlyForecast.weather[0].icon +
+                ".png"
+              }
+              width="50px"
+              height="50px"
+            />
+          </CardMedia>
           <CardHeader
             title={new Date(
               this.props.threeHourlyForecast.dt * 1000
@@ -33,18 +46,6 @@ class DayCard extends Component {
               this.props.threeHourlyForecast.main.temp
             }
           />
-          <CardMedia style={style}>
-            <img
-              className="weather-icons"
-              src={
-                "http://openweathermap.org/img/w/" +
-                this.props.threeHourlyForecast.weather[0].icon +
-                ".png"
-              }
-              width="50px"
-              height="50px"
-            />
-          </CardMedia>
         </Card>
       </div>
     );
