@@ -1,7 +1,7 @@
 export const GETFORECAST = "GETFORECAST";
 
 const urlForecast =
-  "http://api.openweathermap.org/data/2.5/forecast?q=paris&units=metric&mode=json&APPID=b57750b61d184fe48f10456a380f0dc5";
+  "http://api.openweathermap.org/data/2.5/forecast?q=city&units=metric&mode=json&APPID=b57750b61d184fe48f10456a380f0dc5";
 
 export function getForecast(daysOfForecast) {
   return {
@@ -10,9 +10,10 @@ export function getForecast(daysOfForecast) {
   };
 }
 
-export function getForecastData() {
+export function getForecastData(city) {
+  let newUrl = urlForecast.replace("city", city);
   return dispatch => {
-    fetch(urlForecast, {})
+    fetch(newUrl, {})
       .then(res => {
         return res.text();
       })

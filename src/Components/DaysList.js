@@ -19,11 +19,7 @@ class DaysList extends Component {
       console.log(error);
     }
 
-    return (
-      <div className="DaysList">
-        {daysList ? daysList : <div>Nothing yet</div>}
-      </div>
-    );
+    return <div className="DaysList">{daysList ? daysList : <div />}</div>;
   }
 }
 

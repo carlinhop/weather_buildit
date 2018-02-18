@@ -23,7 +23,7 @@ class DayCard extends Component {
             subtitle={
               "Description: " +
               this.props.threeHourlyForecast.weather[0].description +
-              " | Temperature " +
+              " | Temperature °C " +
               this.props.threeHourlyForecast.main.temp +
               " | Pressure " +
               this.props.threeHourlyForecast.main.temp
@@ -36,6 +36,8 @@ class DayCard extends Component {
                 this.props.threeHourlyForecast.weather[0].icon +
                 ".png"
               }
+              width="100%"
+              height="auto"
             />
           </CardMedia>
         </Card>
