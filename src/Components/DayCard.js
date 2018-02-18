@@ -13,6 +13,10 @@ class DayCard extends Component {
     super(props);
   }
   render() {
+    const style = {
+      "max-width": "50px",
+      "min-width": "50px"
+    };
     return (
       <div>
         <Card className="day-card">
@@ -29,15 +33,16 @@ class DayCard extends Component {
               this.props.threeHourlyForecast.main.temp
             }
           />
-          <CardMedia>
+          <CardMedia style={style}>
             <img
+              className="weather-icons"
               src={
                 "http://openweathermap.org/img/w/" +
                 this.props.threeHourlyForecast.weather[0].icon +
                 ".png"
               }
-              width="100%"
-              height="auto"
+              width="50px"
+              height="50px"
             />
           </CardMedia>
         </Card>

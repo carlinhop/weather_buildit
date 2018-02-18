@@ -18,6 +18,8 @@ Get the front-end:
 
 Get the front-end running:
 
+Make sure you have either of the following: npm or yarn.
+
 `yarn start`
 
 After that a browser window will open with the project. Be aware it is still in development
