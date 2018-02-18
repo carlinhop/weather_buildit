@@ -1,5 +1,6 @@
 import React from "react";
 import { Component } from "react";
+import DayCard from "./DayCard";
 
 class DaysList extends Component {
   constructor(props) {
@@ -9,8 +10,7 @@ class DaysList extends Component {
   render() {
     return (
       <div className="DaysList">
-        <div>List</div>
-        <p>item 1</p>
+        <DayCard />
       </div>
     );
   }

@@ -20,7 +20,7 @@ class App extends Component {
                 return (
                   <div className="App">
                     <Bar />
-                    <DaysList />
+                    <DaysList className="day-list" />
                   </div>
                 );
               }}
