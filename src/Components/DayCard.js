@@ -7,7 +7,10 @@ class DayCard extends Component {
     return (
       <div>
         <Card className="day-card">
-          <CardHeader title="Without Avatar" subtitle="Subtitle" />
+          <CardHeader
+            title="Without Avatar"
+            subtitle="Temperature 20C | Pressure 100 mil "
+          />
         </Card>
       </div>
     );

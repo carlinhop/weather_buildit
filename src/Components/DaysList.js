@@ -11,6 +11,9 @@ class DaysList extends Component {
     return (
       <div className="DaysList">
         <DayCard />
+        <DayCard />
+        <DayCard />
+        <DayCard />
       </div>
     );
   }

@@ -4,5 +4,11 @@
   justify-content: center;
 }
 
-.day-list {
+.DaysList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5%;
+  margin-right: 33%;
+  margin-left: 33%;
 }
