@@ -1,27 +1,23 @@
-export const ALLPOSTS = "ALLPOSTS";
+export const GETFORECAST = "GETFORECAST";
 
-const urlCategories = "http://localhost:3001/categories";
+const urlForecast =
+  "http://api.openweathermap.org/data/2.5/forecast?q=paris&mode=json&APPID=b57750b61d184fe48f10456a380f0dc5";
 
-export function getPosts(posts) {
+export function getForecast(daysOfForecast) {
   return {
-    type: ALLPOSTS,
-    payload: posts
+    type: GETFORECAST,
+    payload: daysOfForecast
   };
 }
 
-export function getPostData() {
+export function getForecastData() {
   return dispatch => {
-    fetch(urlPosts, {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "carlos"
-      }
-    })
+    fetch(urlForecast, {})
       .then(res => {
         return res.text();
       })
       .then(data => {
-        return dispatch(getPosts(JSON.parse(data)));
+        return dispatch(getForecast(JSON.parse(data)));
       });
   };
 }

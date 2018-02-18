@@ -1,7 +1,7 @@
 function reducer(state = {}, action) {
   switch (action.type) {
-    case "ALLPOSTS":
-      console.log("testing reducer");
+    case "GETFORECAST":
+      console.log(action.payload);
     default:
       return state;
   }

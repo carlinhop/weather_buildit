@@ -6,8 +6,14 @@ import TextField from "material-ui/TextField";
 import "./App.css";
 import Bar from "./Components/Bar";
 import DaysList from "./Components/DaysList";
+import { getForecastData } from "./Actions/ActionCreators";
+import { store } from "./index";
+import { connect } from "react-redux";
 
 class App extends Component {
+  componentWillMount() {
+    store.dispatch(getForecastData());
+  }
   render() {
     return (
       <BrowserRouter>
@@ -32,4 +38,8 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps() {
+  return {};
+}
+
+export default connect(mapStateToProps)(App);
