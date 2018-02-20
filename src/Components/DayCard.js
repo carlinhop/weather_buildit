@@ -43,7 +43,7 @@ class DayCard extends Component {
               " | Temperature °C " +
               this.props.threeHourlyForecast.main.temp +
               " | Pressure " +
-              this.props.threeHourlyForecast.main.temp
+              this.props.threeHourlyForecast.main.pressure
             }
           />
         </Card>
