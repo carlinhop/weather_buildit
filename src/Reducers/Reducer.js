@@ -1,6 +1,8 @@
+import { GETFORECAST } from "../Actions/ActionCreators";
+
 function reducer(state = {}, action) {
   switch (action.type) {
-    case "GETFORECAST":
+    case GETFORECAST:
       return Object.assign({}, state, { forecast: action.payload });
     default:
       return state;

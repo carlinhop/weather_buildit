@@ -36,7 +36,7 @@ class DayCard extends Component {
           <CardHeader
             title={new Date(
               this.props.threeHourlyForecast.dt * 1000
-            ).toString()}
+            ).toLocaleString("en-GB", { timeZone: "UTC" })}
             subtitle={
               "Description: " +
               this.props.threeHourlyForecast.weather[0].description +
